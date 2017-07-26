@@ -6,39 +6,53 @@ import UIKit
 
 final class WindowManager {
 
-    let window: UIWindow = {
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.backgroundColor = .clear
-        window.windowLevel = UIWindowLevelAlert
-        return window
-    }()
     let rootViewController: RootViewController
 
     init(viewController: RootViewController) {
         self.rootViewController = viewController
-
-        self.window.rootViewController = self.rootViewController
     }
 
     // MARK: Window management
 
+    private var alertWindow: UIWindow?
     private weak var lastKeyWindow: UIWindow?
 
     func showAlertWindow() {
-        guard self.window.isHidden else {
+        guard self.alertWindow == nil else {
             return
         }
 
-        self.rootViewController.statusBarStyle = UIApplication.shared.statusBarStyle
-        self.lastKeyWindow = UIApplication.shared.keyWindow
+        let alertWindow = WindowManager.makeAlertWindow(with: self.rootViewController)
+        self.alertWindow = alertWindow
 
-        self.window.makeKeyAndVisible()
+        self.lastKeyWindow = UIApplication.shared.keyWindow
+        self.rootViewController.statusBarStyle = UIApplication.shared.statusBarStyle
+
+        alertWindow.makeKeyAndVisible()
     }
 
     func hideAlertWindow() {
-        self.window.isHidden = true
-        self.lastKeyWindow?.makeKeyAndVisible()
+        guard let alertWindow = self.alertWindow else {
+            return
+        }
+
+        alertWindow.isHidden = true
+        self.alertWindow = nil
+
+        let newKeyWindow = self.lastKeyWindow ?? UIApplication.shared.windows.first
+        newKeyWindow?.makeKeyAndVisible()
         self.lastKeyWindow = nil
+    }
+
+    private static func makeAlertWindow(with viewController: UIViewController) -> UIWindow {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.backgroundColor = .clear
+        window.windowLevel = UIWindowLevelAlert
+        window.rootViewController = viewController
+
+        window.accessibilityIdentifier = "RALGlobalAlertWindow"
+
+        return window
     }
 
 }

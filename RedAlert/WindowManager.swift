@@ -27,6 +27,7 @@ final class WindowManager {
 
         self.lastKeyWindow = UIApplication.shared.keyWindow
         self.rootViewController.statusBarStyle = UIApplication.shared.statusBarStyle
+        self.rootViewController.isStatusBarHidden = UIApplication.shared.isStatusBarHidden
 
         alertWindow.makeKeyAndVisible()
     }

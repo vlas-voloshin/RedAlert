@@ -14,8 +14,18 @@ final class RootViewController: UIViewController {
         }
     }
 
+    var isStatusBarHidden: Bool = false {
+        didSet {
+            self.setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return self.statusBarStyle
+    }
+
+    override var prefersStatusBarHidden: Bool {
+        return self.isStatusBarHidden
     }
 
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {

@@ -8,10 +8,10 @@ import UIKit
 public final class AlertPresenter: NSObject, RootViewControllerDelegate {
 
     @objc(sharedInstance)
-    public static let shared = AlertPresenter()
+    public static let shared = AlertPresenter(windowLevel: UIWindowLevelAlert)
 
-    public override init() {
-        self.windowManager = WindowManager(viewController: self.rootViewController)
+    public init(windowLevel: UIWindowLevel) {
+        self.windowManager = WindowManager(viewController: self.rootViewController, windowLevel: windowLevel)
 
         super.init()
 

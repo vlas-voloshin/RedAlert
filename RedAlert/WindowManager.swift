@@ -7,9 +7,11 @@ import UIKit
 final class WindowManager {
 
     let rootViewController: RootViewController
+    let windowLevel: UIWindowLevel
 
-    init(viewController: RootViewController) {
+    init(viewController: RootViewController, windowLevel: UIWindowLevel) {
         self.rootViewController = viewController
+        self.windowLevel = windowLevel
     }
 
     // MARK: Window management
@@ -22,7 +24,7 @@ final class WindowManager {
             return
         }
 
-        let alertWindow = WindowManager.makeAlertWindow(with: self.rootViewController)
+        let alertWindow = WindowManager.makeAlertWindow(with: self.rootViewController, at: self.windowLevel)
         self.alertWindow = alertWindow
 
         self.lastKeyWindow = UIApplication.shared.keyWindow
@@ -45,10 +47,10 @@ final class WindowManager {
         self.lastKeyWindow = nil
     }
 
-    private static func makeAlertWindow(with viewController: UIViewController) -> UIWindow {
+    private static func makeAlertWindow(with viewController: UIViewController, at windowLevel: UIWindowLevel) -> UIWindow {
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.backgroundColor = .clear
-        window.windowLevel = UIWindowLevelAlert
+        window.windowLevel = windowLevel
         window.rootViewController = viewController
 
         window.accessibilityIdentifier = "RALGlobalAlertWindow"

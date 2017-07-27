@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		7D596BD51F28B9990077E402 /* RedAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D596BD31F28B9990077E402 /* RedAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7D596BDE1F28BB070077E402 /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D596BDD1F28BB070077E402 /* AlertItem.swift */; };
 		7D596BE01F28BC1A0077E402 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D596BDF1F28BC1A0077E402 /* AlertPresenter.swift */; };
 		7D596BE21F28BD9C0077E402 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D596BE11F28BD9C0077E402 /* WindowManager.swift */; };
 		7D596BE41F28BE190077E402 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D596BE31F28BE190077E402 /* RootViewController.swift */; };
 		7D596BE61F28CDB30077E402 /* UIAlertController+RedAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D596BE51F28CDB30077E402 /* UIAlertController+RedAlert.swift */; };
+		7DBBA69D1F2A2119005C4AF2 /* AlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBBA69C1F2A2119005C4AF2 /* AlertState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7D596BD01F28B9990077E402 /* RedAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RedAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D596BD31F28B9990077E402 /* RedAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedAlert.h; sourceTree = "<group>"; };
 		7D596BD41F28B9990077E402 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7D596BDD1F28BB070077E402 /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
 		7D596BDF1F28BC1A0077E402 /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
 		7D596BE11F28BD9C0077E402 /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
 		7D596BE31F28BE190077E402 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		7D596BE51F28CDB30077E402 /* UIAlertController+RedAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+RedAlert.swift"; sourceTree = "<group>"; };
+		7DBBA69C1F2A2119005C4AF2 /* AlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +56,8 @@
 		7D596BD21F28B9990077E402 /* RedAlert */ = {
 			isa = PBXGroup;
 			children = (
-				7D596BDD1F28BB070077E402 /* AlertItem.swift */,
 				7D596BDF1F28BC1A0077E402 /* AlertPresenter.swift */,
+				7DBBA69C1F2A2119005C4AF2 /* AlertState.swift */,
 				7D596BE31F28BE190077E402 /* RootViewController.swift */,
 				7D596BE51F28CDB30077E402 /* UIAlertController+RedAlert.swift */,
 				7D596BE11F28BD9C0077E402 /* WindowManager.swift */,
@@ -146,10 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D596BDE1F28BB070077E402 /* AlertItem.swift in Sources */,
 				7D596BE01F28BC1A0077E402 /* AlertPresenter.swift in Sources */,
 				7D596BE41F28BE190077E402 /* RootViewController.swift in Sources */,
 				7D596BE61F28CDB30077E402 /* UIAlertController+RedAlert.swift in Sources */,
+				7DBBA69D1F2A2119005C4AF2 /* AlertState.swift in Sources */,
 				7D596BE21F28BD9C0077E402 /* WindowManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

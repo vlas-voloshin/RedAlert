@@ -28,6 +28,12 @@ public final class AlertPresenter: NSObject, RootViewControllerDelegate {
 
     // MARK: Implementation
 
+    private struct AlertItem {
+        let controller: UIAlertController
+        let shouldAnimate: Bool
+        let handler: AlertStateHandler?
+    }
+
     private let rootViewController = RootViewController()
     private let windowManager: WindowManager
 

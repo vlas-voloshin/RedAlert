@@ -13,11 +13,3 @@ public enum AlertState: Int {
 }
 
 public typealias AlertStateHandler = (UIAlertController, AlertState) -> Void
-
-struct AlertItem {
-
-    let controller: UIAlertController
-    let shouldAnimate: Bool
-    let handler: AlertStateHandler?
-
-}

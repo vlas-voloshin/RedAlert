@@ -4,7 +4,8 @@
 
 import UIKit
 
-final class WindowManager {
+/// Helper class that allows displaying and destroying an emphemeral overlay window that hosts the specified view controller.
+final internal class WindowManager {
 
     let rootViewController: RootViewController
     let windowLevel: UIWindowLevel

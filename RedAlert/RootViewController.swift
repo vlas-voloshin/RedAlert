@@ -4,7 +4,8 @@
 
 import UIKit
 
-final class RootViewController: UIViewController {
+/// Empty view controller that acts as a root view controller of the alert overlay window, allows controlling the status bar style and hidden state, and provides delegate callbacks for modal view controller dismissal events. 
+final internal class RootViewController: UIViewController {
 
     weak var delegate: RootViewControllerDelegate?
 
@@ -37,6 +38,7 @@ final class RootViewController: UIViewController {
         self.delegate?.rootViewController(self, willDismiss: alertController)
 
         super.dismiss(animated: flag) {
+            // Provided completion block will invoke the alert action
             completion?()
             self.delegate?.rootViewController(self, didDismiss: alertController)
         }
@@ -44,7 +46,7 @@ final class RootViewController: UIViewController {
 
 }
 
-protocol RootViewControllerDelegate: class {
+internal protocol RootViewControllerDelegate: class {
     func rootViewController(_ viewController: RootViewController, willDismiss alertController: UIAlertController)
     func rootViewController(_ viewController: RootViewController, didDismiss alertController: UIAlertController)
 }

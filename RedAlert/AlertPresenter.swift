@@ -14,6 +14,7 @@ public final class AlertPresenter: NSObject, RootViewControllerDelegate {
     public static let shared = AlertPresenter(windowLevel: UIWindowLevelAlert)
 
     /// Initializes an instance of an alert presenter with the specified window level. Alerts presented using this instance would appear at this window level.
+    @objc
     public init(windowLevel: UIWindowLevel) {
         self.windowManager = WindowManager(viewController: self.rootViewController, windowLevel: windowLevel)
 

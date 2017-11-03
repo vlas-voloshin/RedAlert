@@ -11,7 +11,7 @@ Presenting alerts globally is generally not recommended. Ideally, each alert sho
 Red Alert manages a temporary overlay window with an empty view controller. Alert controllers are presented from that view controller. If multiple alerts are requested, they're queued up. Once the last alert is dismissed, the window is automatically destroyed. This approach is similar to the implementation of backwards-compatible presentation of `UIAlertView` instances in newer iOS releases.
 
 ## Requirements
-- Xcode 8.3+ (written in Swift 3.2, compatible with 3.1)
+- Xcode 9.0+ (written in Swift 4.0). For compatibility with Xcode 8.x, use version 1.0.0 of this library.
 - iOS 8.0+
 - Compatible with Objective-C
 

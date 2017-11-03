@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "RedAlert"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Small iOS library for presenting UIAlertController in a UIAlertView fashion."
   s.homepage     = "https://github.com/vlas-voloshin/RedAlert"
   s.license      = { :type => "MIT", :file => "LICENSE" }

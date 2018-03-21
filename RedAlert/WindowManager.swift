@@ -28,7 +28,12 @@ final internal class WindowManager {
         let alertWindow = WindowManager.makeAlertWindow(with: self.rootViewController, at: self.windowLevel)
         self.alertWindow = alertWindow
 
-        self.lastKeyWindow = UIApplication.shared.keyWindow
+        // Inherit tint color from the key window
+        let keyWindow = UIApplication.shared.keyWindow
+        alertWindow.tintColor = keyWindow?.tintColor
+        self.lastKeyWindow = keyWindow
+
+        // Inherit status bar configuration from its current state
         self.rootViewController.statusBarStyle = UIApplication.shared.statusBarStyle
         self.rootViewController.isStatusBarHidden = UIApplication.shared.isStatusBarHidden
 
